@@ -1,6 +1,6 @@
-baseURL = "https://FinnCarmen.github.io/FinnBlog/"  # 请根据实际情况修改
+baseURL = "https://github.com/FinnCarmen/FinnBlog"  # 请根据实际情况修改
 languageCode = "zh-cn"
-title = "Ghomist 个人随笔"
+title = "FinnCarmen 个人随笔"
 theme = "terminal"
 defaultContentLanguage = "zh"
 
@@ -51,7 +51,7 @@ defaultContentLanguage = "zh"
     identifier = "showcase"
     name = "代码随想录"
     url = "/代码随想录"
-    weight = 10
+    weight = 1000
 
   # 文章
   [[menu.main]]
