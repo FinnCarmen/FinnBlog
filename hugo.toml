@@ -1,0 +1,76 @@
+baseURL = "https://finncarmen.github.io/"  # 请根据实际情况修改
+languageCode = "zh-cn"
+title = "Ghomist 个人随笔"
+theme = "terminal"
+defaultContentLanguage = "zh"
+
+# 分页配置
+[pagination]
+  pagerSize = 1000
+
+[params]
+  contentTypeName = "posts"
+  showMenuItems = 2
+  showLanguageSelector = false
+  fullWidthTheme = true
+  centerTheme = true
+  autoCover = true
+  showLastUpdated = true
+  readingTime = true
+  Toc = true
+  TocTitle = "目录"
+  themeColor = "ocean"
+
+  owner = "Finn"
+  keywords = "Hugo, Terminal, 博客"
+  menuMore = "更多"
+  readMore = "阅读全文"
+  readOtherPosts = "阅读其他文章"
+  newerPosts = "较新的文章"
+  olderPosts = "较旧的文章"
+  missingContentMessage = "页面不存在..."
+  missingBackButtonLabel = "返回首页"
+  minuteReadingTime = "分钟阅读"
+  words = "字数"
+
+  [params.logo]
+    logoText = "Terminal"
+    logoHomeLink = "/"
+
+# 导航菜单配置
+[menu]
+  # 关于我
+  [[menu.main]]
+    identifier = "about"
+    name = "关于我"
+    url = "/about"
+    weight = 1
+
+  # 代码随想录
+  [[menu.main]]
+    identifier = "showcase"
+    name = "代码随想录"
+    url = "/代码随想录"
+    weight = 10
+
+  # 文章
+  [[menu.main]]
+    identifier = "posts"
+    name = "文章"
+    url = "/posts/"
+    weight = 3
+
+  # 随笔
+  [[menu.main]]
+    identifier = "essays"
+    name = "随笔"
+    url = "/essays/"
+    weight = 4
+
+
+  # Blog 源码
+  [[menu.main]]
+    identifier = "blog-source"
+    name = "Blog 源码"
+    url = "https://github.com/your-repo"  # 替换为您的实际仓库地址
+    weight = 6
