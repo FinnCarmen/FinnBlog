@@ -18,7 +18,7 @@ defaultContentLanguage = "zh"
   showLastUpdated = true
   readingTime = true
   Toc = true
-  TocTitle = "目录"
+  TocTitle = "目录"     
   themeColor = "ocean"
 
   owner = "Finn"
@@ -44,33 +44,18 @@ defaultContentLanguage = "zh"
     identifier = "about"
     name = "关于我"
     url = "/about"
-    weight = 1
+    weight = 5
 
-  # 代码随想录
+  # 算法笔记
   [[menu.main]]
     identifier = "showcase"
-    name = "代码随想录"
-    url = "/代码随想录"
-    weight = 1000
-
-  # 文章
-  [[menu.main]]
-    identifier = "posts"
-    name = "文章"
-    url = "/posts/"
-    weight = 3
-
-  # 随笔
-  [[menu.main]]
-    identifier = "essays"
-    name = "随笔"
-    url = "/essays/"
-    weight = 4
-
+    name = "算法笔记"
+    url = "/算法笔记"
+    weight = 1
 
   # Blog 源码
   [[menu.main]]
     identifier = "blog-source"
     name = "Blog 源码"
-    url = "https://github.com/your-repo"  # 替换为您的实际仓库地址
+    url = "https://github.com/FinnCarmen/FinnBlog"
     weight = 6

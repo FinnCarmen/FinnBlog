@@ -2,11 +2,12 @@
 <html lang="zh">
 <head><script src="/FinnCarmen/FinnBlog/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=FinnCarmen/FinnBlog/livereload" data-no-instant defer></script>
   
-    <title>代码随想录s :: FinnCarmen 个人随笔</title>
+    <title>算法笔记 :: FinnCarmen 个人随笔</title>
   
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="" />
+<meta name="description" content="这里是 算法笔记 部分
+" />
 <meta name="keywords" content="Hugo, Terminal, 博客" />
 
   <meta name="robots" content="noodp" />
@@ -75,8 +76,9 @@
 
 <meta property="og:locale" content="zh" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="代码随想录s">
-<meta property="og:description" content="" />
+<meta property="og:title" content="算法笔记">
+<meta property="og:description" content="这里是 算法笔记 部分
+" />
 <meta property="og:url" content="http://localhost:1313/FinnCarmen/FinnBlog/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/" />
 <meta property="og:site_name" content="FinnCarmen 个人随笔" />
 
@@ -197,7 +199,321 @@
   <div class="content">
     
   
+    <div class="index-content">
+      <p>这里是 算法笔记 部分</p>
+
+    </div>
+  
   <div class="posts">
+    
+      <article class="post on-list">
+        <h2 class="post-title">
+          <a href="http://localhost:1313/FinnCarmen/FinnBlog/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/%E5%BC%80%E5%8F%91%E5%95%86%E8%B4%AD%E4%B9%B0%E5%9C%9F%E5%9C%B0/">开发商购买土地</a>
+        </h2>
+        <div class="post-meta"><time class="post-date">2025-01-23</time></div>
+
+        
+
+        
+
+
+        <div class="post-content">
+          
+            <p><a href="https://kamacoder.com/problempage.php?pid=1044">题目链接</a></p>
+<h3 id="heading"></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">#include&lt;iostream&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include&lt;cmath&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> N <span style="color:#f92672">=</span> <span style="color:#ae81ff">110</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> s[N][N];
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> n, m, ans <span style="color:#f92672">=</span> <span style="color:#ae81ff">1e9</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">solve</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;=</span> n; i<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; j <span style="color:#f92672">&lt;=</span> m; j<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">int</span> x;
+</span></span><span style="display:flex;"><span>            cin <span style="color:#f92672">&gt;&gt;</span> x;
+</span></span><span style="display:flex;"><span>            s[i][j] <span style="color:#f92672">=</span> s[i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>][j] <span style="color:#f92672">+</span> s[i][j <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">-</span> s[i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>][j <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">+</span> x;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span> n; i<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> x <span style="color:#f92672">=</span> abs(s[n][m] <span style="color:#f92672">-</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> s[i][m]);
+</span></span><span style="display:flex;"><span>        ans <span style="color:#f92672">=</span> min(ans, x);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span> m; i<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> x <span style="color:#f92672">=</span> abs(s[n][m] <span style="color:#f92672">-</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> s[n][i]);
+</span></span><span style="display:flex;"><span>        ans <span style="color:#f92672">=</span> min(ans, x);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> ans;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    cin <span style="color:#f92672">&gt;&gt;</span> n <span style="color:#f92672">&gt;&gt;</span> m;
+</span></span><span style="display:flex;"><span>    solve();
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+          
+        </div>
+
+        
+           <div>
+            <a class="read-more button inline" href="/FinnCarmen/FinnBlog/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/%E5%BC%80%E5%8F%91%E5%95%86%E8%B4%AD%E4%B9%B0%E5%9C%9F%E5%9C%B0/">阅读全文</a>
+          </div>
+        
+      </article>
+    
+      <article class="post on-list">
+        <h2 class="post-title">
+          <a href="http://localhost:1313/FinnCarmen/FinnBlog/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/%E5%8C%BA%E9%97%B4%E5%92%8C/">区间和</a>
+        </h2>
+        <div class="post-meta"><time class="post-date">2025-01-23</time></div>
+
+        
+
+        
+
+
+        <div class="post-content">
+          
+            <p><a href="https://kamacoder.com/problempage.php?pid=1070">题目链接</a></p>
+<p><a href="https://www.programmercarl.com/kamacoder/0058.%E5%8C%BA%E9%97%B4%E5%92%8C.html#%E6%80%9D%E8%B7%AF">文章链接</a></p>
+<h3 id="正向思维">正向思维</h3>
+<p>超时做法，查一次循环一次，查 m 次时间复杂度为 m*n</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;vector&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> n, a, b;
+</span></span><span style="display:flex;"><span>    cin <span style="color:#f92672">&gt;&gt;</span> n;
+</span></span><span style="display:flex;"><span>    vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> vec(n);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> n; i<span style="color:#f92672">++</span>) cin <span style="color:#f92672">&gt;&gt;</span> vec[i];
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> (cin <span style="color:#f92672">&gt;&gt;</span> a <span style="color:#f92672">&gt;&gt;</span> b) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> sum <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 累加区间 a 到 b 的和
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> a; i <span style="color:#f92672">&lt;=</span> b; i<span style="color:#f92672">++</span>) sum <span style="color:#f92672">+=</span> vec[i];
+</span></span><span style="display:flex;"><span>        cout <span style="color:#f92672">&lt;&lt;</span> sum <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="哈希思想">哈希思想</h3>
+<p>先算好前缀和存起来</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;vector&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> n,a,b;
+</span></span><span style="display:flex;"><span>    cin<span style="color:#f92672">&gt;&gt;</span>n;
+</span></span><span style="display:flex;"><span>    vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> arr(n);
+</span></span><span style="display:flex;"><span>    vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> p(n);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> sum <span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;i<span style="color:#f92672">&lt;</span>n;i<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        cin<span style="color:#f92672">&gt;&gt;</span>arr[i];
+</span></span><span style="display:flex;"><span>        sum<span style="color:#f92672">+=</span>arr[i];
+</span></span><span style="display:flex;"><span>        p[i]<span style="color:#f92672">=</span>sum;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span>(cin<span style="color:#f92672">&gt;&gt;</span>a<span style="color:#f92672">&gt;&gt;</span>b)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> s;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(a<span style="color:#f92672">==</span><span style="color:#ae81ff">0</span>)s<span style="color:#f92672">=</span>p[b];
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span> s<span style="color:#f92672">=</span>p[b]<span style="color:#f92672">-</span>p[a<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>];
+</span></span><span style="display:flex;"><span>        cout<span style="color:#f92672">&lt;&lt;</span>s<span style="color:#f92672">&lt;&lt;</span>endl;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="双指针">双指针</h3>
+<p>时间复杂度会低一点</p>
+          
+        </div>
+
+        
+           <div>
+            <a class="read-more button inline" href="/FinnCarmen/FinnBlog/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/%E5%8C%BA%E9%97%B4%E5%92%8C/">阅读全文</a>
+          </div>
+        
+      </article>
+    
+      <article class="post on-list">
+        <h2 class="post-title">
+          <a href="http://localhost:1313/FinnCarmen/FinnBlog/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/%E8%9E%BA%E6%97%8B%E7%9F%A9%E9%98%B5/">螺旋矩阵</a>
+        </h2>
+        <div class="post-meta"><time class="post-date">2025-01-23</time></div>
+
+        
+
+        
+
+
+        <div class="post-content">
+          
+            <p><a href="https://leetcode.cn/problems/spiral-matrix-ii/">题目链接</a></p>
+<p><a href="https://programmercarl.com/0059.%E8%9E%BA%E6%97%8B%E7%9F%A9%E9%98%B5II.html">文章讲解</a></p>
+<p><a href="https://www.bilibili.com/video/BV1SL4y1N7mV/">视频讲解</a></p>
+<h3 id="正面思维">正面思维</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>    vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&gt;</span> generateMatrix(<span style="color:#66d9ef">int</span> n) {
+</span></span><span style="display:flex;"><span>        vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&gt;</span>res(n,vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span>(n,<span style="color:#ae81ff">0</span>));<span style="color:#75715e">//*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">int</span> x<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>,y<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> loop<span style="color:#f92672">=</span>n<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> mid<span style="color:#f92672">=</span>n<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> val<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> offset<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> i,j;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span>(loop<span style="color:#f92672">--</span>)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            i<span style="color:#f92672">=</span>x;
+</span></span><span style="display:flex;"><span>            j<span style="color:#f92672">=</span>y;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span>(j;j<span style="color:#f92672">&lt;</span>n<span style="color:#f92672">-</span>offset;j<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                res[i][j]<span style="color:#f92672">=</span>val<span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span>(i;i<span style="color:#f92672">&lt;</span>n<span style="color:#f92672">-</span>offset;i<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                res[i][j]<span style="color:#f92672">=</span>val<span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span>(;j<span style="color:#f92672">&gt;</span>y;j<span style="color:#f92672">--</span>)
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                res[i][j]<span style="color:#f92672">=</span>val<span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span>(;i<span style="color:#f92672">&gt;</span>x;i<span style="color:#f92672">--</span>)
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                res[i][j]<span style="color:#f92672">=</span>val<span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            x<span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>            y<span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>            offset<span style="color:#f92672">+=</span><span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(n<span style="color:#f92672">%</span><span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            res[mid][mid]<span style="color:#f92672">=</span>val;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> res;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><h3 id="利用边界旋转方向">利用边界旋转方向</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;vector&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>    vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&gt;</span> generateMatrix(<span style="color:#66d9ef">int</span> n) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> maxVal <span style="color:#f92672">=</span> n <span style="color:#f92672">*</span> n;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> cur <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>        vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&gt;</span> res(n, vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span>(n, <span style="color:#ae81ff">0</span>)); <span style="color:#75715e">// 初始化矩阵为0
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">int</span> row <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, col <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 方向数组：右, 下, 左, 上
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&gt;</span> dir <span style="color:#f92672">=</span> { {<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>}, {<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>}, {<span style="color:#ae81ff">0</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>}, {<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>} };
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> dirId <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#75715e">// 当前方向的索引
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span>(cur <span style="color:#f92672">&lt;=</span> maxVal) {
+</span></span><span style="display:flex;"><span>            res[row][col] <span style="color:#f92672">=</span> cur<span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// 计算下一个位置
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#66d9ef">int</span> nextRow <span style="color:#f92672">=</span> row <span style="color:#f92672">+</span> dir[dirId][<span style="color:#ae81ff">0</span>];
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">int</span> nextCol <span style="color:#f92672">=</span> col <span style="color:#f92672">+</span> dir[dirId][<span style="color:#ae81ff">1</span>];
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// 检查下一个位置是否越界或已被填充
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#66d9ef">if</span>(nextRow <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> nextRow <span style="color:#f92672">&gt;=</span> n <span style="color:#f92672">||</span> nextCol <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> nextCol <span style="color:#f92672">&gt;=</span> n <span style="color:#f92672">||</span> res[nextRow][nextCol] <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span>                dirId <span style="color:#f92672">=</span> (dirId <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">%</span> <span style="color:#ae81ff">4</span>; <span style="color:#75715e">// 顺时针切换到下一个方向
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                <span style="color:#75715e">// 更新方向后的新位置
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                row <span style="color:#f92672">+=</span> dir[dirId][<span style="color:#ae81ff">0</span>];
+</span></span><span style="display:flex;"><span>                col <span style="color:#f92672">+=</span> dir[dirId][<span style="color:#ae81ff">1</span>];
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>                row <span style="color:#f92672">=</span> nextRow;
+</span></span><span style="display:flex;"><span>                col <span style="color:#f92672">=</span> nextCol;
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> res;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div>
+          
+        </div>
+
+        
+           <div>
+            <a class="read-more button inline" href="/FinnCarmen/FinnBlog/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/%E8%9E%BA%E6%97%8B%E7%9F%A9%E9%98%B5/">阅读全文</a>
+          </div>
+        
+      </article>
+    
+      <article class="post on-list">
+        <h2 class="post-title">
+          <a href="http://localhost:1313/FinnCarmen/FinnBlog/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/%E9%95%BF%E5%BA%A6%E6%9C%80%E5%B0%8F%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84/">长度最小的子数组</a>
+        </h2>
+        <div class="post-meta"><time class="post-date">2025-01-23</time></div>
+
+        
+
+        
+
+
+        <div class="post-content">
+          
+            <p><a href="https://leetcode.cn/problems/minimum-size-subarray-sum/">题目链接</a></p>
+<p><a href="https://programmercarl.com/0209.%E9%95%BF%E5%BA%A6%E6%9C%80%E5%B0%8F%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84.html">文章讲解</a></p>
+<p><a href="https://www.bilibili.com/video/BV1tZ4y1q7XE">视频讲解</a></p>
+<h3 id="正向思维">正向思维</h3>
+<p>一般这种题 在正确理解题意后 顺着题目意思来写 是没问题的</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> minSubArrayLen(<span style="color:#66d9ef">int</span> target, vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&amp;</span> nums)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> len<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> res<span style="color:#f92672">=</span><span style="color:#ae81ff">100005</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;i<span style="color:#f92672">&lt;</span>nums.size();i<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">int</span> sum<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> j<span style="color:#f92672">=</span>i;j<span style="color:#f92672">&lt;</span>nums.size();j<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                sum<span style="color:#f92672">+=</span>nums[j];
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span>(sum<span style="color:#f92672">&gt;=</span>target)
+</span></span><span style="display:flex;"><span>                {
+</span></span><span style="display:flex;"><span>                    len<span style="color:#f92672">=</span>j<span style="color:#f92672">-</span>i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>                    res<span style="color:#f92672">=</span>res<span style="color:#f92672">&lt;</span>len<span style="color:#f92672">?</span>res:len;
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> res<span style="color:#f92672">==</span><span style="color:#ae81ff">100005</span><span style="color:#f92672">?</span><span style="color:#ae81ff">0</span><span style="color:#f92672">:</span>res;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><h3 id="滑动窗口">滑动窗口</h3>
+<p>采用双指针控制区间更优</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> minSubArrayLen(<span style="color:#66d9ef">int</span> target, vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&amp;</span> nums)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> res <span style="color:#f92672">=</span> <span style="color:#ae81ff">100005</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> sum <span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> len <span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> j<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;j<span style="color:#f92672">&lt;</span>nums.size();j<span style="color:#f92672">++</span>)<span style="color:#75715e">//控制滑动窗口终点
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        {
+</span></span><span style="display:flex;"><span>            sum<span style="color:#f92672">+=</span>nums[j];
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">while</span>(sum<span style="color:#f92672">&gt;=</span>target)
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                len<span style="color:#f92672">=</span>j<span style="color:#f92672">-</span>i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>                res<span style="color:#f92672">=</span>res<span style="color:#f92672">&lt;</span>len<span style="color:#f92672">?</span>res:len;
+</span></span><span style="display:flex;"><span>                sum<span style="color:#f92672">-=</span>nums[i<span style="color:#f92672">++</span>];<span style="color:#75715e">//*控制滑动窗口起点
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> res<span style="color:#f92672">==</span><span style="color:#ae81ff">100005</span><span style="color:#f92672">?</span><span style="color:#ae81ff">0</span><span style="color:#f92672">:</span>res;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div>
+          
+        </div>
+
+        
+           <div>
+            <a class="read-more button inline" href="/FinnCarmen/FinnBlog/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/%E9%95%BF%E5%BA%A6%E6%9C%80%E5%B0%8F%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84/">阅读全文</a>
+          </div>
+        
+      </article>
     
       <article class="post on-list">
         <h2 class="post-title">
@@ -217,6 +533,7 @@
 <p><a href="https://www.bilibili.com/video/BV1fA4y1o715">视频讲解</a></p>
 <h3 id="左闭右闭区间">左闭右闭区间</h3>
 <p>二分查找使用前提： 数组有序 &amp; 无重复元素</p>
+<p>易错点：middle 需要随着循环不断更新，故放在 while 循环内部</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> search(vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&amp;</span> nums, <span style="color:#66d9ef">int</span> target) {
@@ -275,12 +592,10 @@
           
             <p><a href="https://leetcode.cn/problems/remove-element/">题目链接</a></p>
 <p><a href="https://programmercarl.com/0027.%E7%A7%BB%E9%99%A4%E5%85%83%E7%B4%A0.html">文章讲解</a></p>
-<p><a href="https://www.bilibili.com/video/BV12A4y1Z7LP">视频讲解</a>
-<a href=""></a>
-<a href=""></a>
-<a href=""></a></p>
+<p><a href="https://www.bilibili.com/video/BV12A4y1Z7LP">视频讲解</a></p>
 <h3 id="正向思维留下符合题目要求的">正向思维（留下符合题目要求的）</h3>
 <p>下意识想开辟新数组存放答案，但使用双指针直接覆盖即可</p>
+<p>双指针适合在利用比较两个量确定结果或利用两个变量相互配合的时候用</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> removeElement(vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&amp;</span> nums, <span style="color:#66d9ef">int</span> val) {

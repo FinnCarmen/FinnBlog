@@ -10,6 +10,7 @@
 文章讲解
 视频讲解
 左闭右闭区间 二分查找使用前提： 数组有序 &amp; 无重复元素
+易错点：middle 需要随着循环不断更新，故放在 while 循环内部
 class Solution { public: int search(vector&lt;int&gt;&amp; nums, int target) { int l=0,r=nums.size()-1; while(l&lt;=r) { int m=l&#43;(r-l)/2; if(target&lt;nums[m])r=m-1; else if(target&gt;nums[m])l=m&#43;1; else return m; } return -1; } }; " />
 <meta name="keywords" content="Hugo, Terminal, 博客" />
 
@@ -84,6 +85,7 @@ class Solution { public: int search(vector&lt;int&gt;&amp; nums, int target) { i
 文章讲解
 视频讲解
 左闭右闭区间 二分查找使用前提： 数组有序 &amp; 无重复元素
+易错点：middle 需要随着循环不断更新，故放在 while 循环内部
 class Solution { public: int search(vector&lt;int&gt;&amp; nums, int target) { int l=0,r=nums.size()-1; while(l&lt;=r) { int m=l&#43;(r-l)/2; if(target&lt;nums[m])r=m-1; else if(target&gt;nums[m])l=m&#43;1; else return m; } return -1; } }; " />
 <meta property="og:url" content="http://localhost:1313/FinnCarmen/FinnBlog/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" />
 <meta property="og:site_name" content="FinnCarmen 个人随笔" />
@@ -237,6 +239,7 @@ class Solution { public: int search(vector&lt;int&gt;&amp; nums, int target) { i
 <p><a href="https://www.bilibili.com/video/BV1fA4y1o715">视频讲解</a></p>
 <h3 id="左闭右闭区间">左闭右闭区间<a href="#左闭右闭区间" class="hanchor" ariaLabel="Anchor">#</a> </h3>
 <p>二分查找使用前提： 数组有序 &amp; 无重复元素</p>
+<p>易错点：middle 需要随着循环不断更新，故放在 while 循环内部</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> search(vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&amp;</span> nums, <span style="color:#66d9ef">int</span> target) {

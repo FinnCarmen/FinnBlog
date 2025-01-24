@@ -10,6 +10,7 @@
 文章讲解
 视频讲解
 正向思维（留下符合题目要求的） 下意识想开辟新数组存放答案，但使用双指针直接覆盖即可
+双指针适合在利用比较两个量确定结果或利用两个变量相互配合的时候用
 class Solution { public: int removeElement(vector&lt;int&gt;&amp; nums, int val) { int j=0; for(int i=0;i&lt;nums.size();i&#43;&#43;) { if(nums[i]!=val) //* { nums[j]=nums[i]; j&#43;&#43;; } } return j; } }; 逆向思维（删除不符合题目要求的） class Solution { public: int removeElement(vector&lt;int&gt;&amp; nums, int val) { int size=nums.size(); for(int i=0;i&lt;size;i&#43;&#43;) { if(nums[i]==val) //* { for(int j=i&#43;1;j&lt;size;j&#43;&#43;) { nums[j-1]=nums[j]; } i-=1; size-=1; } } return size; } }; " />
 <meta name="keywords" content="Hugo, Terminal, 博客" />
 
@@ -84,6 +85,7 @@ class Solution { public: int removeElement(vector&lt;int&gt;&amp; nums, int val)
 文章讲解
 视频讲解
 正向思维（留下符合题目要求的） 下意识想开辟新数组存放答案，但使用双指针直接覆盖即可
+双指针适合在利用比较两个量确定结果或利用两个变量相互配合的时候用
 class Solution { public: int removeElement(vector&lt;int&gt;&amp; nums, int val) { int j=0; for(int i=0;i&lt;nums.size();i&#43;&#43;) { if(nums[i]!=val) //* { nums[j]=nums[i]; j&#43;&#43;; } } return j; } }; 逆向思维（删除不符合题目要求的） class Solution { public: int removeElement(vector&lt;int&gt;&amp; nums, int val) { int size=nums.size(); for(int i=0;i&lt;size;i&#43;&#43;) { if(nums[i]==val) //* { for(int j=i&#43;1;j&lt;size;j&#43;&#43;) { nums[j-1]=nums[j]; } i-=1; size-=1; } } return size; } }; " />
 <meta property="og:url" content="http://localhost:1313/FinnCarmen/FinnBlog/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/%E7%A7%BB%E9%99%A4%E5%85%83%E7%B4%A0/" />
 <meta property="og:site_name" content="FinnCarmen 个人随笔" />
@@ -210,7 +212,7 @@ class Solution { public: int removeElement(vector&lt;int&gt;&amp; nums, int val)
   <h1 class="post-title">
     <a href="http://localhost:1313/FinnCarmen/FinnBlog/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/%E7%A7%BB%E9%99%A4%E5%85%83%E7%B4%A0/">移除元素</a>
   </h1>
-  <div class="post-meta"><time class="post-date">2025-01-21&nbsp;[Updated:  2025-01-21]</time><span class="post-reading-time">1 分钟阅读 (63 字数)</span></div>
+  <div class="post-meta"><time class="post-date">2025-01-21&nbsp;[Updated:  2025-01-21]</time><span class="post-reading-time">1 分钟阅读 (64 字数)</span></div>
 
   
   
@@ -240,6 +242,7 @@ class Solution { public: int removeElement(vector&lt;int&gt;&amp; nums, int val)
 <p><a href="https://www.bilibili.com/video/BV12A4y1Z7LP">视频讲解</a></p>
 <h3 id="正向思维留下符合题目要求的">正向思维（留下符合题目要求的）<a href="#正向思维留下符合题目要求的" class="hanchor" ariaLabel="Anchor">#</a> </h3>
 <p>下意识想开辟新数组存放答案，但使用双指针直接覆盖即可</p>
+<p>双指针适合在利用比较两个量确定结果或利用两个变量相互配合的时候用</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> removeElement(vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&amp;</span> nums, <span style="color:#66d9ef">int</span> val) {
