@@ -14,9 +14,9 @@ hideComments = true
 
 定个小目标：不复制粘贴代码
 
-目前正在更新[算法笔记]()部分
+目前正在更新[算法笔记](https://finncarmen.github.io/FinnBlog/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/)部分
 
-谢谢你的阅读
+谢谢你的阅读~
 
 ## 我的兴趣
 
