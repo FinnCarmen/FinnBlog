@@ -16,10 +16,16 @@ hideComments = true
 
 目前正在更新[算法笔记](https://finncarmen.github.io/FinnBlog/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/)部分
 
-谢谢你的阅读~
+排版还比较乱，有空了会美化一下
+
+谢谢你的阅读
 
 ## 我的兴趣
 
 - 编程
 - 摇滚
 - 户外
+
+wx:FinnCarmen
+
+欢迎讨论~
