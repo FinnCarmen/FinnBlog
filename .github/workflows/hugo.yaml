@@ -1,4 +1,3 @@
-# 用于构建和部署Hugo网站到GitHub Pages的示例工作流程
 name: 发布Hugo网站到Pages
 
 on:
@@ -61,7 +60,7 @@ jobs:
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
       - name: 上传构建产物
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v2 # 更新为 v2
         with:
           path: ./public
 
