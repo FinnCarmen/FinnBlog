@@ -40,7 +40,7 @@ jobs:
       - name: 安装Dart Sass
         run: sudo snap install dart-sass
       - name: 检出
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3 # 使用v3版本
         with:
           submodules: recursive
           fetch-depth: 0
@@ -60,7 +60,7 @@ jobs:
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
       - name: 上传构建产物
-        uses: actions/upload-pages-artifact@v2 # 更新为 v2
+        uses: actions/upload-pages-artifact@v2 # 已经是正确的版本
         with:
           path: ./public
 
@@ -74,4 +74,4 @@ jobs:
     steps:
       - name: 部署到GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v2 # 已经是正确的版本
