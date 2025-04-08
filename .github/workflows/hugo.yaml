@@ -39,7 +39,7 @@ jobs:
           && sudo dpkg -i ${{ runner.temp }}/hugo.deb
       - name: 安装Dart Sass
         run: sudo snap install dart-sass
-      - name: 检出
+      - name: 检出代码
         uses: actions/checkout@v3 # 使用v3版本
         with:
           submodules: recursive
@@ -60,7 +60,7 @@ jobs:
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
       - name: 上传构建产物
-        uses: actions/upload-pages-artifact@v2 # 已经是正确的版本
+        uses: actions/upload-pages-artifact@v2 # 使用 v2 版本
         with:
           path: ./public
 
@@ -74,4 +74,4 @@ jobs:
     steps:
       - name: 部署到GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2 # 已经是正确的版本
+        uses: actions/deploy-pages@v2 # 使用 v2 版本
